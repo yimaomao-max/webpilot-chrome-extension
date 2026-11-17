@@ -289,7 +289,7 @@ Feedback: [Issues](https://github.com/yimaomao-max/webpilot-chrome-extension/iss
 
 ## Related repos
 
-This repo is the **browser extension**. The Web SaaS (accounts, pairing, server-side monitors) is typically hosted in a separate repo (e.g. Vercel).
+This repo is the **browser extension**. Web SaaS: https://github.com/yimaomao-max/webpilot-saas (Vercel, pairing, server-side checks).
 
 **Detailed manual:** [docs/USER_GUIDE.en.md](docs/USER_GUIDE.en.md) · Chinese: [docs/USER_GUIDE.md](docs/USER_GUIDE.md)
 

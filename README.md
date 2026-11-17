@@ -291,7 +291,7 @@ zip -r webpilot-v0.2.0.zip . -x "*.git*"
 
 ## 相关仓库
 
-本仓库为 **浏览器端扩展**。配套 Web SaaS（账户、配对、服务端监控）可单独部署；若你的 monorepo 中包含 `web-saas`，通常以第二个 GitHub 仓库托管并连接 Vercel。
+本仓库为 **浏览器端扩展**。配套 Web SaaS：https://github.com/yimaomao-max/webpilot-saas（Vercel 部署、扩展配对、云端定时检查）。
 
 **详细手册：** [docs/USER_GUIDE.md](docs/USER_GUIDE.md) · English: [docs/USER_GUIDE.en.md](docs/USER_GUIDE.en.md)
 
