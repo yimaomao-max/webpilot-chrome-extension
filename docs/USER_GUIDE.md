@@ -2,6 +2,8 @@
 
 > 本文是 [README](../README.md) 的加长说明，适合 onboarding、写帮助中心或对外培训。
 
+**语言：** [简体中文](USER_GUIDE.md) · [English](USER_GUIDE.en.md)
+
 ## 目录
 
 1. [产品定位](#1-产品定位)

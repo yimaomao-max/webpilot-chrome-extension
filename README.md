@@ -4,6 +4,8 @@
 
 **Know what changed. Know why it matters.**
 
+**[简体中文](README.md)** · **[English](README.en.md)**
+
 面向 SaaS 创始人与增长团队的 **Chrome 竞争对手情报扩展**：从公开定价页、功能对比表提取结构化数据，持续监控字段级变化，在涨价、改套餐、上新功能时第一时间收到可行动的洞察。
 
 [![Chrome MV3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
@@ -290,6 +292,8 @@ zip -r webpilot-v0.2.0.zip . -x "*.git*"
 ## 相关仓库
 
 本仓库为 **浏览器端扩展**。配套 Web SaaS（账户、配对、服务端监控）可单独部署；若你的 monorepo 中包含 `web-saas`，通常以第二个 GitHub 仓库托管并连接 Vercel。
+
+**详细手册：** [docs/USER_GUIDE.md](docs/USER_GUIDE.md) · English: [docs/USER_GUIDE.en.md](docs/USER_GUIDE.en.md)
 
 ---
 
