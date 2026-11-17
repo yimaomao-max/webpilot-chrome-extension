@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>WebPilot AI · 每周报告</title>
+  <link rel="stylesheet" href="report.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">WebPilot AI<div class="tagline">Competitor Data Intelligence · 每周竞争对手变化报告</div></div>
+    <div class="actions">
+      <button id="btnGen" class="primary">立即生成本周报告</button>
+      <button id="btnCopy">复制最新报告</button>
+      <button id="btnExport">导出 .md</button>
+    </div>
+  </header>
+  <main>
+    <div id="hint" class="hint"></div>
+    <section id="dashSection" hidden>
+      <div class="section-title">监控仪表盘</div>
+      <div id="dashStats"></div>
+      <table id="dashTable"></table>
+    </section>
+    <section id="historySection" hidden>
+      <div class="section-title">字段追踪历史 · 数据对比与趋势</div>
+      <div id="historyList"></div>
+    </section>
+    <div id="reports"></div>
+    <div id="empty" class="empty" hidden>
+      暂无报告。请先在扩展弹窗中保存监控任务，然后点击「立即生成本周报告」。<br />
+      配置 AI API Key 后，报告将附带「重点变化解读 / 对业务的影响 / 建议行动」。
+    </div>
+  </main>
+  <script src="report.js"></script>
+</body>
+</html>

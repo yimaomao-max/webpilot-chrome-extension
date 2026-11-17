@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>WebPilot AI 设置</title>
+  <style>
+    body { font: 14px/1.6 'Segoe UI', 'Microsoft YaHei', sans-serif; color: #0f172a; background: #f8fafc; margin: 0; }
+    .card { max-width: 560px; margin: 40px auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    p.sub { color: #64748b; margin: 0 0 20px; font-size: 13px; }
+    label { display: block; font-weight: 600; margin: 14px 0 4px; }
+    input { width: 100%; padding: 8px 10px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; box-sizing: border-box; }
+    .hint { color: #64748b; font-size: 12px; margin-top: 4px; }
+    .row { margin-top: 20px; display: flex; gap: 10px; }
+    button { padding: 8px 18px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px; }
+    button.primary { background: #2563eb; border-color: #2563eb; color: #fff; font-weight: 600; }
+    #msg { margin-top: 14px; font-size: 13px; color: #2563eb; min-height: 18px; word-break: break-all; }
+    #msg.err { color: #dc2626; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>WebPilot AI 设置</h1>
+    <p class="sub">AI 字段识别与变化解读为可选增强功能：不配置 Key 时，规则识别（价格/日期/邮箱/标题等）仍然可用。</p>
+    <p class="sub" style="color:#64748b;">
+      使用边界：WebPilot AI 仅用于公开网页的数据提取与变化监控（监控检查以匿名方式访问页面）。
+      不支持也不应用于绕过登录、验证码或访问限制；请勿用于大规模个人信息采集，请遵守目标网站的服务条款与当地法律法规。
+    </p>
+    <label for="baseUrl">API Base URL（OpenAI 兼容）</label>
+    <input id="baseUrl" placeholder="https://api.openai.com/v1" />
+    <label for="apiKey">API Key</label>
+    <input id="apiKey" type="password" placeholder="sk-..." />
+    <label for="model">模型名称</label>
+    <input id="model" placeholder="gpt-4o-mini" />
+    <p class="hint">支持任何 OpenAI 兼容接口（OpenAI / DeepSeek / 通义千问 / 本地 Ollama 等），Key 仅保存在本地浏览器中。</p>
+    <label for="cloudBase">云端账号绑定（服务端下发套餐，优先于本地模拟）</label>
+    <input id="cloudBase" placeholder="https://webpilot.ai" />
+    <input id="pairKey" placeholder="wpk_...（在网页仪表盘「配对码」卡片中获取）" />
+    <div class="row" style="margin-top:8px;">
+      <button id="bind" class="primary">绑定 / 刷新套餐</button>
+      <button id="unbind">解绑</button>
+    </div>
+    <p class="hint" id="bindStatus">未绑定：使用下方本地模拟套餐。</p>
+    <label for="plan">本地模拟套餐（仅在未绑定时生效）</label>
+    <select id="plan">
+      <option value="free">Free $0 — 3 个监控页面 · 每天检查一次 · 7 天历史 · CSV 导出</option>
+      <option value="pro">Pro $12/月 — 30 个监控页面 · 每日自动检查 · AI 变化分析 · 90 天历史</option>
+      <option value="team">Team $29/月 — 100 个监控页面 · 365 天历史 · Google Sheets 同步 · 3 成员</option>
+    </select>
+    <label for="webhookUrl">变化通知 Webhook（可选）</label>
+    <input id="webhookUrl" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/... 或钉钉/Slack/企业微信机器人地址" />
+    <p class="hint">监控检测到有意义的变化时，自动 POST 一条 JSON（含字段级变化摘要与初步推断），兼容飞书/钉钉/Slack 自定义机器人。留空则不推送。</p>
+    <div class="row">
+      <button id="save" class="primary">保存</button>
+      <button id="test">测试连接</button>
+      <button id="testWebhook">测试 Webhook</button>
+    </div>
+    <div id="msg"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+body {
+  font: 14px/1.7 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+.logo { font-weight: 700; font-size: 16px; }
+.logo .tagline { font-size: 11px; font-weight: 400; opacity: 0.85; }
+.actions { display: flex; gap: 8px; }
+button {
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+button:hover { background: rgba(255, 255, 255, 0.28); }
+button.primary { background: #fff; color: #2563eb; font-weight: 700; border-color: #fff; }
+button.primary:hover { background: #eff6ff; }
+main { max-width: 860px; margin: 24px auto 60px; padding: 0 20px; }
+.hint { color: #64748b; font-size: 12.5px; margin-bottom: 12px; min-height: 16px; }
+.empty {
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  color: #64748b;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.card-head b { font-size: 15px; }
+.meta { color: #64748b; font-size: 12px; }
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.badge.ai { background: #ede9fe; color: #6d28d9; }
+.badge.rule { background: #f1f5f9; color: #475569; }
+.md h2 { font-size: 15px; margin: 18px 0 6px; color: #1d4ed8; }
+.md h3 { font-size: 13.5px; margin: 14px 0 4px; }
+.md h4 { font-size: 13px; margin: 10px 0 4px; }
+.md p { margin: 4px 0; }
+.md li { margin: 3px 0 3px 18px; display: list-item; }
+.md b { color: #b45309; }
+.analysis {
+  margin-top: 14px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.analysis-title {
+  font-weight: 700;
+  color: #6d28d9;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+#dashSection {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+#dashSection .section-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1d4ed8;
+  margin-bottom: 14px;
+}
+#dashStats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.stat {
+  flex: 1 1 140px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.stat .num { font-size: 20px; font-weight: 700; color: #1d4ed8; }
+.stat .lab { font-size: 11.5px; color: #64748b; }
+.up { color: #dc2626; font-weight: 600; }
+.down { color: #16a34a; font-weight: 600; }
+#dashTable { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+#dashTable th { text-align: left; background: #f1f5f9; color: #334155; padding: 6px 10px; border: 1px solid #e2e8f0; }
+#dashTable td { padding: 6px 10px; border: 1px solid #eef2f7; word-break: break-all; }
+#historySection {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+#historySection .section-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1d4ed8;
+  margin-bottom: 14px;
+}
+.hist-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.hist-table th {
+  text-align: left;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 6px 10px;
+  border: 1px solid #e2e8f0;
+}
+.hist-table td {
+  padding: 6px 10px;
+  border: 1px solid #eef2f7;
+  color: #0f172a;
+  word-break: break-all;
+}
+.hist-table tr:first-child td { color: #64748b; }

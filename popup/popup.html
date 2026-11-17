@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">WebPilot AI<div class="tagline">Competitor Data Intelligence</div></div>
+    <div class="header-right">
+      <span id="quota" class="quota" title="当前套餐与监控用量（套餐可在设置页切换）"></span>
+      <button id="btnSettings" class="icon-btn" title="设置（API Key）">设置</button>
+    </div>
+  </header>
+  <main>
+    <div class="onboard hint">目标用法：打开竞争对手的<strong>公开</strong>定价页/功能列表页 → 智能选择提取 → 保存监控 → 每周获得结构化情报报告。当前版本优先保证常见静态页面（定价表/功能对比表）的稳定提取；动态渲染页面请使用「智能选择提取」。</div>
+    <section>
+      <div class="row">
+        <button id="btnPick" class="primary">智能选择提取</button>
+        <button id="btnScan">扫描页面表格</button>
+      </div>
+      <div id="tableListWrap" hidden>
+        <label class="hint">检测到的表格：</label>
+        <select id="tableSelect"></select>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="previewWrap" hidden>
+      <div class="section-title">提取预览（列名可直接编辑）</div>
+      <div id="previewScroll">
+        <table id="preview"></table>
+      </div>
+      <div id="rowCount" class="hint"></div>
+      <div class="row">
+        <button id="btnAI">AI 识别字段</button>
+        <input id="maxPages" type="number" min="1" max="200" value="10" title="批量提取页数" />
+        <button id="btnPage">批量分页提取</button>
+      </div>
+      <div id="fieldPanel" hidden>
+        <div class="section-title">字段确认（AI 识别结果可修改；确认后字段获得稳定 ID，页面微调不影响历史对比）</div>
+        <div id="fieldList"></div>
+        <div class="row">
+          <button id="btnFieldConfirm" class="primary">确认字段</button>
+        </div>
+      </div>
+      <div class="row">
+        <select id="monInterval" title="监控频率">
+          <option value="30">每 30 分钟</option>
+          <option value="60" selected>每 1 小时</option>
+          <option value="360">每 6 小时</option>
+          <option value="1440">每天</option>
+        </select>
+        <button id="btnMonitor">保存为监控任务</button>
+      </div>
+      <div class="row">
+        <button id="btnCsv">导出 CSV</button>
+        <button id="btnXlsx">导出 Excel</button>
+        <button id="btnJson">导出 JSON</button>
+      </div>
+    </section>
+
+    <section id="monitorSection">
+      <div class="section-title">从网址添加竞品监控</div>
+      <div class="row">
+        <input id="monUrl" placeholder="粘贴竞争对手定价页 / 功能页网址" />
+        <button id="btnScanUrl">扫描</button>
+      </div>
+      <div id="urlTables" hidden>
+        <select id="urlTableSelect"></select>
+        <div id="urlPreview" class="hint"></div>
+        <div class="row">
+          <select id="urlInterval">
+            <option value="30">每 30 分钟</option>
+            <option value="60" selected>每 1 小时</option>
+            <option value="360">每 6 小时</option>
+            <option value="1440">每天</option>
+          </select>
+          <button id="btnCreateUrlMon" class="primary">创建监控</button>
+        </div>
+      </div>
+      <div class="section-title">监控任务</div>
+      <div class="row">
+        <button id="btnReport">每周报告</button>
+        <button id="btnGenReport">立即生成本周报告</button>
+      </div>
+      <div id="monitorList"></div>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

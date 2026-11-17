@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "WebPilot AI — Competitor Data Intelligence",
+  "version": "0.2.0",
+  "description": "网页数据提取与竞争对手情报监控平台：提取任意公开网页关键数据，持续监控变化，自动获得字段级结构化商业情报。仅用于公开网页数据，不支持绕过登录、验证码或访问限制。",
+  "permissions": ["activeTab", "scripting", "storage", "alarms", "offscreen"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "WebPilot AI",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/extract-core.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

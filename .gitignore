@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+
+# Local extension settings / packed builds (do not commit API keys)
+*.pem
+*.crx
+*.zip
+dist/
+build/
